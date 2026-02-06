@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SwingHub</title>
+  <meta name="description" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@700&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@500&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden>SH</div>
+        <div>
+          <div style="font-weight: 600; font-size: 25px">SwingHub</div>
+          <div style="font-size: 10px; color: var(--muted);">
+            Technical and Non-Technical Students Talents
+          </div>
+        </div>
+      </div>
+
+      <!-------Header/Nav----------->
+      <nav aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <!-- <a href="#work">Work</a> -->
+        <a href="#about">About</a>
+        <button class="cta" id="contact-btn"> <a href="#contact-form">Contact</a> </button>
+      </nav>
+
+      <button class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+        ☰
+      </button>
+    </header>
+
+    <!-- HERO -->
+    <main>
+
+      <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="hero-left">
+          <h1 id="hero-title">
+            Connecting Skilled Students to Real Paid Jobs.
+          </h1>
+
+          <p class="lead">
+            Web Development, UI/UX, Content Writing, Motion Design and more powered by university talents.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact-form" class="cta">Start a Project</a>
+            <a href="#services" style="
+                  padding: 8px 12px;
+                  background: transparent;
+                  border-radius: 10px;
+                  border: 1.2px solid var(--muted);
+                  color: #f39b30;
+                  font-weight: 700;
+                ">View Work</a>
+          </div>
+
+          <div style="
+                margin-top: 22px;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+              ">
+            <div class="cuckoo" title="fun accent" id="catchMe">🟠</div>
+            <div style="color: var(--muted); font-size: 14px">
+              Trusted by startups and agencies, focusing on speed and craft.
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-right">
+          <div class="card reveal" data-reveal>
+            <div class="stat">
+              <h3>Design and Build</h3>
+              <p>
+                Product design, component libraries, and frontend development.
+              </p>
+            </div>
+            <hr style="
+                  border: none;
+                  border-top: 1px solid rgba(255, 255, 255, 0.03);
+                  margin: 12px 0;
+                " />
+            <div style="
+                  display: flex;
+                  gap: 12px;
+                  align-items: center;
+                  justify-content: space-between;
+                ">
+              <div>
+                <strong style="font-size: 20px">24</strong>
+                <div style="color: var(--muted); font-size: 13px">
+                  Projects shipped
+                </div>
+              </div>
+              <div style="text-align: right; color: var(--muted)">
+                Avg delivery:
+                <strong style="color: var(--accent)">3 weeks</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="blob" aria-hidden></div>
+        </aside>
+      </section>
+
+      </section>
+
+
+      <!-----Services----->
+      <section id="services" class="projects" aria-label="Renewable energy projects">
+        <article class="card">
+          <figure>
+            <img src="pictures/Web App Dev.jpg" alt="Web App Development" />
+          </figure>
+          <div class="icon-badge">
+            <img src="pictures/Icons/Web icon.svg" alt="" />
+          </div>
+          <div class="card-content">
+            <h3>Web App Development</h3>
+            <p>
+              Student build fast, responsive, and user interfaces that ensures
+              smooth, enjoyable user experiences backed by strategic design
+              thinking.
+            </p>
+            <a href="web-development.html" class="read-more">See Student Work →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure>
+            <img src="pictures/Ui Ux Design.jpg" alt="Solar panels installation" />
+          </figure>
+          <div class="icon-badge">
+            <img src="pictures/Icons/Figma.svg" alt="" />
+          </div>
+          <div class="card-content">
+            <h3>UI/UX Design</h3>
+            <p>
+              Student design clean and intuitive user interfaces that ensure
+              smooth, enjoyable user experiences backed by strategic design
+              thinking.
+            </p>
+            <a href="uiux-design.html" class="read-more">See Student Work →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure>
+            <img src="pictures/Motion design.jpg" alt="Solar panels installation" />
+          </figure>
+          <div class="icon-badge">
+
+            <img src="pictures/Icons/Motion Design.svg" alt="" />
+          </div>
+          <div class="card-content">
+            <h3>Motion and Graphic Design</h3>
+            <p>
+              Student create eye catching animations and high quality visuals
+              graphics that strengthen branding and improve audience engagement.
+            </p>
+            <a href="motion.html" class="read-more">See Student Work →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure>
+            <img src="pictures/Content Writing.jpg" alt="Solar panels installation" />
+          </figure>
+          <div class="icon-badge">
+            <img src="pictures/Icons/Content.svg" alt="" />
+          </div>
+          <div class="card-content">
+            <h3>Content Writing</h3>
+            <p>
+              Student craft clear, persuasive and SEO- friendly written content
+              that communicates your brand message and attracts your ideal
+              audience.
+            </p>
+            <a href="content.html" class="read-more">See Student Work →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure>
+            <img src="pictures/Digital Marketing.jpg" alt="Solar panels installation" />
+          </figure>
+          <div class="icon-badge">
+            <img src="pictures/Icons/Digital Marketing.svg" alt="" />
+          </div>
+          <div class="card-content">
+            <h3>Digital Marketing</h3>
+            <p>
+              Student help your brand grow online through strategic campaigns
+              that drive visibility, traffic, and conversions across multiple
+              digital platforms.
+            </p>
+            <a href="digital.html" class="read-more">See Student Work →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure>
+            <img src="pictures/Social Media Marketing.jpg" alt="Solar panels installation" />
+          </figure>
+          <div class="icon-badge">
+            <img src="pictures/Icons/Social media.svg" alt="" />
+          </div>
+          <div class="card-content">
+            <h3>Social Media Marketing</h3>
+            <p>
+              Student manage and grow your social media presence with engaging
+              content, community interactions, and result driven strategy.
+            </p>
+            <a href="smm.html" class="read-more">See Student Work →</a>
+          </div>
+        </article>
+      </section>
+
+      <!----- ABOUT & CONTACT-FORM ------>
+      <section id="about" class="about" aria-labelledby="about-title">
+        <div>
+          <h2 id="about-title">About SwingHub</h2>
+          <p>
+            Many skilled students inside universities struggle to get Real
+            <br />
+            real jobs or clients. SwingHub exists to help them earn from their
+            <br />
+            skills while still in school. We act as the bridge between student
+            <br />
+            talent and paying clients.
+          </p>
+
+          <h3 style="margin-top: 60px">How we work</h3>
+          <p>- Client submits project request via contact form</p>
+          <p>- SwingHub assigns job to verified student talent</p>
+          <p>- Student completes Project</p>
+          <p>- We deliver a Job well done</p>
+        </div>
+
+        <aside class="contact-card reveal" data-reveal>
+          <h3>Contact</h3>
+          <p style="color: var(--muted)">
+            If you need a website, branding or marketing help, message us.
+          </p>
+
+          <form id="contact-form" onsubmit="return false;" aria-label="Contact form">
+            <label style="display: block; margin-top: 12px; font-size: 13px">Email
+              <input id="email" type="email" required placeholder="you@company.com" style="
+                    width: 100%;
+                    margin-top: 6px;
+                    padding: 10px;
+                    border-radius: 8px;
+                    border: 2px solid var(--muted);
+                    background: transparent;
+                    color: inherit;
+                  " />
+            </label>
+
+            <label style="display: block; margin-top: 10px; font-size: 13px">Message
+              <textarea id="message" rows="4" placeholder="Short summary..." style="
+                    width: 100%;
+                    margin-top: 6px;
+                    padding: 10px;
+                    border-radius: 8px;
+                    border: 2px solid var(--muted);
+                    background: transparent;
+                    color: inherit;
+                  "></textarea>
+            </label>
+
+            <button id="send" style="
+                  margin-top: 12px;
+                  padding: 10px 12px;
+                  border-radius: 8px;
+                  background: var(--accent);
+                  border: 0;
+                  font-weight: 700;
+                  cursor: pointer;
+                ">
+              Send
+            </button>
+          </form>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <div style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+          ">
+        <div style="font-weight: 300">SwingHub x UNN x Roar Nigeria Hub</div>
+        <div style="color: gray">
+          © <span id="year"></span> Built with care
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+<script src="script.js"></script>
+
+</html>

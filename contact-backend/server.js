@@ -9,10 +9,10 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-server.use(cors()); 
-server.use(express.json()); 
-server.use(express.urlencoded({ extended: true })); 
-server.use(express.static(path.join(__dirname, 'frontend')));
+server.use(cors());
+server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
+server.use(express.static(path.join(__dirname, '../')));
 
 // Configure email transporter
 const transporter = nodemailer.createTransport({
@@ -26,6 +26,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+// Verify email configuration on startup
 // Verify email configuration on startup
 transporter.verify((error, success) => {
   if (error) {
@@ -42,41 +43,41 @@ server.post('/api/contact', async (req, res) => {
 
     // Validation
     if (!email || !message) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Please provide both email and message' 
+      return res.status(400).json({
+        success: false,
+        message: 'Please provide both email and message'
       });
     }
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Please provide a valid email address' 
+      return res.status(400).json({
+        success: false,
+        message: 'Please provide a valid email address'
       });
     }
 
     // Message length validation
     if (message.length < 10) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Message must be at least 10 characters long' 
+      return res.status(400).json({
+        success: false,
+        message: 'Message must be at least 10 characters long'
       });
     }
 
     if (message.length > 1000) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Message is too long (max 1000 characters)' 
+      return res.status(400).json({
+        success: false,
+        message: 'Message is too long (max 1000 characters)'
       });
     }
 
     // Email options
     const mailOptions = {
-      from: process.env.EMAIL_USER, 
-      to: process.env.EMAIL_USER, 
-      replyTo: email, 
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      replyTo: email,
       subject: `New Contact Form Message from ${email}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -111,29 +112,29 @@ server.post('/api/contact', async (req, res) => {
 
     // Send email
     const info = await transporter.sendMail(mailOptions);
-    
+
     // log success
     console.log(' Email sent successfully:', info.messageId);
-    
+
     // send success response
-    res.status(200).json({ 
-      success: true, 
-      message: 'Message sent successfully! We will get back to you soon.' 
+    res.status(200).json({
+      success: true,
+      message: 'Message sent successfully! We will get back to you soon.'
     });
 
   } catch (error) {
     console.error(' Error sending email:', error);
-    
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to send message. Please try again later or email us directly.' 
+
+    res.status(500).json({
+      success: false,
+      message: 'Failed to send message. Please try again later or email us directly.'
     });
   }
 });
 
 // Health check endpoint (to test if server is running)
 server.get('/api/health', (req, res) => {
-  res.json({ 
+  res.json({
     status: 'SwingHub Server is running',
     service: 'Contact Form API',
     timestamp: new Date().toISOString(),
@@ -142,17 +143,17 @@ server.get('/api/health', (req, res) => {
 });
 
 // Root endpoint
-server.get('/',(req,res) =>{
-  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+server.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../index.html'));
 })
 
 
 
 // 404 handler
 server.use((req, res) => {
-  res.status(404).json({ 
-    success: false, 
-    message: 'Endpoint not found' 
+  res.status(404).json({
+    success: false,
+    message: 'Endpoint not found'
   });
 });
 
